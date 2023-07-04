@@ -1,10 +1,10 @@
-import react from 'react'
+import Home from './views/Home'
 
 function App() {
 
   return (
     <>
-     <h1 className='text-4xl'>Apple Store</h1>
+     <Home />
     </>
   )
 }
