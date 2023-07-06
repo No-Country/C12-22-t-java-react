@@ -1,3 +1,6 @@
+
+
+
 import react from "react";
 import Navbar from "../src/components/Navbar";
 import Home from "../src/views/Home";
@@ -8,8 +11,10 @@ import MyProfile from "./views/MyProfile";
 import Mac from "./views/Mac";
 import Cart from "./views/Cart";
 
+
 function App() {
   return (
+
     <HashRouter>
       <Navbar />
       <Routes>
@@ -22,6 +27,7 @@ function App() {
       </Routes>
     </HashRouter>
   );
+
 }
 
 export default App;

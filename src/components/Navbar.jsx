@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
+
   const [product, setProduct] = useState("")
   
   const searhbar = () => [
@@ -55,6 +56,7 @@ const Navbar = () => {
       </div>
     </nav>
   );
+
 };
 
 export default Navbar;
