@@ -1,10 +1,11 @@
 import react from 'react'
+import CreateUser from "./views/CreateUser/CreateUser"
 
 function App() {
 
   return (
     <>
-     <h1 className='text-4xl'>Apple Store</h1>
+      <CreateUser/>
     </>
   )
 }
