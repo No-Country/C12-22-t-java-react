@@ -1,25 +1,18 @@
-
-
-
-
-import react from "react";
-import Navbar from "../src/components/Navbar";
-import Home from "../src/views/Home";
-import { HashRouter, Routes, Route } from "react-router-dom";
-import Ipad from "./views/Ipad";
-import Iphone from "./views/Iphone";
-import MyProfile from "./views/MyProfile";
-import Mac from "./views/Mac";
-import Cart from "./views/Cart";
-import Footer from "./components/Footer";
-import LoginForm from "./views/LoginForm";
-import CreateUser from "./views/CreateUser/CreateUser";
-
+import react from 'react';
+import Navbar from '../src/components/Navbar';
+import Home from '../src/views/Home';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import Ipad from './views/Ipad';
+import Iphone from './views/Iphone';
+import MyProfile from './views/MyProfile';
+import Mac from './views/Mac';
+import Cart from './views/Cart';
+import Footer from './components/Footer';
+import LoginForm from './views/LoginForm';
+import CreateUser from './views/CreateUser/CreateUser';
 
 function App() {
   return (
-
-
     <HashRouter>
       <Navbar />
       <Routes>
@@ -32,10 +25,9 @@ function App() {
         <Route path="/createuser" element={<CreateUser />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </HashRouter>
   );
-
 }
 
 export default App;
