@@ -1,6 +1,7 @@
 
 
 
+
 import react from "react";
 import Navbar from "../src/components/Navbar";
 import Home from "../src/views/Home";
@@ -16,6 +17,7 @@ import LoginForm from "./views/LoginForm";
 
 function App() {
   return (
+
 
     <HashRouter>
       <Navbar />
