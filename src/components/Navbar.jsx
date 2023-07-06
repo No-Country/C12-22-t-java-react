@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="flex justify-start items-center gap-1.5 mx-auto"
        >
       <input 
-        placeholder="Search product" 
+        placeholder="buscar producto" 
         className="rounded-md p-0.5 outline-red-900" 
         value={product}
         onChange={(e) => setProduct(e.target.value)}>
@@ -44,13 +44,13 @@ const Navbar = () => {
       </button>
       </div>
       <div>
-      <NavLink href="#miperfil" to="/miperfil" as={Link} className="text-white ">
+      <NavLink href="#myprofile" to="/myprofile" as={Link} className="text-white ">
         
         <i className="fa-regular fa-user"></i>
         
       </NavLink>
 
-      <NavLink href="#carrito" to="/carrito" as={Link} className="text-white mr-96">
+      <NavLink href="#cart" to="/cart" as={Link} className="text-white mr-96">
       <i className="fa-solid fa-cart-shopping"></i>
       </NavLink>
       </div>
