@@ -13,6 +13,7 @@ import Mac from "./views/Mac";
 import Cart from "./views/Cart";
 import Footer from "./components/Footer";
 import LoginForm from "./views/LoginForm";
+import CreateUser from "./views/CreateUser/CreateUser";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/iphone" element={<Iphone />} />
         <Route path="/myprofile" element={<MyProfile />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/createuser" element={<CreateUser />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer/>

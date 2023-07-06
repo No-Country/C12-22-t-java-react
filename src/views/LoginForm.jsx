@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -48,9 +49,9 @@ function Login() {
             Entrar
           </button>
           <div className="mt-4">
-          <a href="/register" className="text-center text-sm text-gray-600 underline hover:text-gray-900">
+          <NavLink href="#createuser" to="/createuser" as={Link} className="text-center text-sm text-gray-600 underline hover:text-gray-900">
             ¿No tienes cuenta? Regístrate aquí
-          </a>
+          </NavLink>
         </div>
         </form>
       </div>
