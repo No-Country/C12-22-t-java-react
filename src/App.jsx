@@ -10,6 +10,8 @@ import Iphone from "./views/Iphone";
 import MyProfile from "./views/MyProfile";
 import Mac from "./views/Mac";
 import Cart from "./views/Cart";
+import Footer from "./components/Footer";
+import LoginForm from "./views/LoginForm";
 
 
 function App() {
@@ -22,9 +24,11 @@ function App() {
         <Route path="/mac" element={<Mac />} />
         <Route path="/ipad" element={<Ipad />} />
         <Route path="/iphone" element={<Iphone />} />
-        <Route path="/miperfil" element={<MyProfile />} />
-        <Route path="/carrito" element={<Cart />} />
+        <Route path="/myprofile" element={<MyProfile />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Footer/>
     </HashRouter>
   );
 
