@@ -10,6 +10,7 @@ import Cart from './views/Cart';
 import Footer from './components/Footer';
 import LoginForm from './views/LoginForm';
 import CreateUser from './views/CreateUser/CreateUser';
+import Contact from './views/Contact';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/createuser" element={<CreateUser />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path='/contact' element={<Contact />}/>
       </Routes>
       <Footer />
     </HashRouter>
