@@ -19,6 +19,6 @@ public class registroController {
 
     @GetMapping("")
     public String getall(){
-        return "holaMundo";
+        return "holaMundoAll";
     }
 }
