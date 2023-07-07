@@ -1,20 +1,15 @@
-#FROM openjdk:11
-#VOLUME /tmp
-#EXPOSE 8080
-#ARG JAR_FILE=target/clon-1.0.1-SNAPSHOT.jar
-#ADD ${JAR_FILE} app.jar
-#ENTRYPOINT ["java","-jar","/app.jar"]*/
-#copy target/dockerized
+FROM ubuntu:latest AS build
 
-FROM maven:3.8.2-jdk-11 AS build
+RUN apt-get update
+RUN apt-get install openjdk-11-jdk -y
 COPY . .
-RUN mvn -f .pom.xml clean package
 
-#
-# Package stage
-#
-FROM openjdk:11
-COPY --from=build /target/clon-1.0.1-SNAPSHOT.jar demo.jar
-# ENV PORT=8080
+RUN ./gradlew bootJar --no-daemon
+
+FROM openjdk:11-jdk-slim
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+
+COPY --from=build /target/clon-1.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
