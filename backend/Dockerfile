@@ -13,7 +13,7 @@
 #
 # Package stage
 #
-FROM openjdk:11-jdk-slim
+FROM openjdk:11
 COPY --from=build /target/clon-1.0.1-SNAPSHOT.jar demo.jar
 # ENV PORT=8080
 EXPOSE 8080
