@@ -6,10 +6,10 @@
 #ENTRYPOINT ["java","-jar","/app.jar"]*/
 #copy target/dockerized
 
-FROM maven:3.6.0-jdk-11-slim AS build
-COPY src /home/app/src
-COPY pom.xml /home/app
+FROM maven:3.8.2-jdk-11 AS build
+COPY . .
 RUN mvn -f /home/app/pom.xml clean package
+
 #
 # Package stage
 #
