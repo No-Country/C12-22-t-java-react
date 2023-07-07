@@ -13,10 +13,10 @@ dist-ssr
 *.local
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
+.front/vscode/*
+!.front/vscode/extensions.json
+.front/idea
+.front/DS_Store
 *.suo
 *.ntvs*
 *.njsproj
