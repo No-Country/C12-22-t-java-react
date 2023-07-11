@@ -36,11 +36,10 @@ public class usuarioModel {
     public usuarioModel() {
     }
 
-    public usuarioModel(String email, String password, String nombres, String apellidos, Date fechaNacimiento) {
+    public usuarioModel(String email, String password, String nombres, String apellidos) {
         this.email = email;
         this.password = password;
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.fechaNacimiento = fechaNacimiento;
     }
 }
