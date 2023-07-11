@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import validation from "./Validation";
 
 const CreateUser = () => {
@@ -26,18 +26,18 @@ const CreateUser = () => {
   };
 
   return (
-    <div className="w-screen  h-screen flex flex-col justify-between items-center bg-gray-300">
-      <div>navbar</div>
-      <div className=" w-96 flex items-center flex-col bg-white rounded-lg p-5 gap-7">
-        <h1 className="text-4xl font-bold">Crear Usuario</h1>
-        <form className="flex flex-col gap-7 w-full ">
+    <div className="w-screen  h-screen flex flex-col justify-center items-center bg-gray-400">
+
+      <div className="w-96 bg-white rounded-lg p-5 gap-7">
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Crear Usuario</h1>
+        <form className="flex flex-col gap-5 w-full ">
           <div className="flex flex-col items-start w-full">
-            <label className="font-bold" htmlFor="">
-              ¿Cuáles son tus nombres?
+            <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="">
+              Nombres
             </label>
             <input
               onChange={handleChange}
-              className="w-full h-8 border-b  border-gray-700 "
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
               type="text"
               name="name"
               placeholder="Ej: Juan Carlos"
@@ -47,12 +47,12 @@ const CreateUser = () => {
             )}
           </div>
           <div className="flex flex-col items-start w-full">
-            <label className="font-bold" htmlFor="">
-              ¿Cuáles son tus apellidos?
+            <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="">
+              Apellidos
             </label>
             <input
               onChange={handleChange}
-              className="w-full h-8 border-b border-gray-700 "
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
               type="text"
               name="lastname"
               placeholder="Ej: Castillo Torres"
@@ -62,12 +62,12 @@ const CreateUser = () => {
             )}
           </div>
           <div className="flex flex-col items-start w-full">
-            <label className="font-bold" htmlFor="">
-              ¿Cuál es tu correo electrónico?
+            <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="">
+              Email
             </label>
             <input
               onChange={handleChange}
-              className="w-full h-8 border-b border-gray-700"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
               type="text"
               name="email"
               placeholder="Ej: JuanTo@gmail.com"
@@ -77,12 +77,12 @@ const CreateUser = () => {
             )}
           </div>
           <div className="flex flex-col items-start w-full">
-            <label className="font-bold" htmlFor="">
-              Crea una contraseña
+            <label className="font-boblock text-gray-600 text-sm font-medium mb-2" htmlFor="">
+              Contraseña
             </label>
             <input
               onChange={handleChange}
-              className="w-full h-8 border-b border-gray-700"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
               type="password"
               name="password"
               placeholder="Contraseña"
@@ -94,7 +94,7 @@ const CreateUser = () => {
 
           <div>
             <button
-              className=" font-bold  w-full h-8 border border-black rounded-md hover:bg-black hover:text-white duration-300"
+              className="w-full bg-black text-white rounded-md px-3 py-2 hover:bg-gray-900 focus:outline-none focus:bg-gray-900"
               type="submit"
             >
               Enviar
@@ -102,7 +102,6 @@ const CreateUser = () => {
           </div>
         </form>
       </div>
-      <div>footer</div>
     </div>
   );
 };
