@@ -10,6 +10,5 @@ public class usuarioRegistroDTO {
     private String password;
     private String nombres;
     private String apellidos;
-    private Date fechaNacimiento;
 
 }
