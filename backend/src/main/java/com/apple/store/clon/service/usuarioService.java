@@ -25,7 +25,7 @@ public class usuarioService {
             response.setMetadata("El usuario ya Existe en la base de datos", "401", "fail");
             return new ResponseEntity<RegistroResponseRest>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }else {
-            usuarioModel usersave= new usuarioModel(user.getEmail(), user.getPassword(), user.getNombres(), user.getApellidos(), user.getFechaNacimiento());
+            usuarioModel usersave= new usuarioModel(user.getEmail(), user.getPassword(), user.getNombres(), user.getApellidos());
 
             usersave.setPassword(passwordEncoder.encode(usersave.getPassword()));
             dao.save(usersave);

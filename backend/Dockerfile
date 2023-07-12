@@ -1,6 +1,8 @@
+FROM maven:3.9.0-eclipse-temurin-11-alpine AS build
+COPY . .
+RUN mvn clean package -DskipTests
+
 FROM openjdk:11
-VOLUME /tmp
+COPY --from=build backend/target/clon-1.0.1-SNAPSHOT.jar clon.jar
 EXPOSE 8080
-ARG JAR_FILE=target/clon-1.0.1-SNAPSHOT.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java", "-jar", "clon.jar"]
