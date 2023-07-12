@@ -1,4 +1,4 @@
 com/apple/store/clon/controller/registroController.class
+com/apple/store/clon/model/usuarioModel.class
 com/apple/store/clon/security.class
 com/apple/store/clon/ClonApplication.class
-com/apple/store/clon/model/usuarioModel.class
