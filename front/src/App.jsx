@@ -15,6 +15,8 @@ import Contact from './views/Contact';
 function App() {
   return (
     <HashRouter>
+    <div className='w-full min-h-screen flex flex-col'>
+    <div className='flex-1'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,7 +29,9 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path='/contact' element={<Contact />}/>
       </Routes>
+      </div>
       <Footer />
+      </div>
     </HashRouter>
   );
 }
