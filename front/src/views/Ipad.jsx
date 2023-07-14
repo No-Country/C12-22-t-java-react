@@ -28,31 +28,33 @@ function IPad() {
         <ul className="grid grid-cols-3 gap-8">
           {products.map(producto => (
             <li key={producto.nombreProducto} className="producto">
-              <div className='bg-gray-50 bg-opacity-10 flex items-center justify-center rounded-2xl'>
+              <div className="bg-gray-50 bg-opacity-10 flex items-center justify-center rounded-2xl">
                 <img
                   className="w-32 p-4"
                   src={producto.imagen1}
                   alt={producto.nombreProducto}
-                  />
+                />
               </div>
-              <h3 className='text-center'>{producto.nombreProducto}</h3>
+              <h3 className="text-center">{producto.nombreProducto}</h3>
             </li>
           ))}
         </ul>
       </div>
       <div>
-          <div key={products[0].nombreProducto} className="producto">
-            <div className='bg-gray-50 bg-opacity-10 flex items-center justify-center rounded-2xl'>
+      {products.length > 0 && (
+          <div className="producto">
+            <div className="bg-gray-50 bg-opacity-10 flex items-center justify-center rounded-2xl">
               <img
-                className="w-1/2 p-8"
+                className="w-1/2 p-4"
                 src={products[0].imagen1}
                 alt={products[0].nombreProducto}
-                />
-              <h3 className='text-center'>{products[0].nombreProducto}</h3>
+              />
+              <h3 className="text-center">{products[0].nombreProducto}</h3>
             </div>
           </div>
-        </div>
+        )}
       </div>
+    </div>
   );
 }
 
