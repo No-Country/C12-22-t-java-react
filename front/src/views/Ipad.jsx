@@ -21,7 +21,7 @@ function IPad() {
     <div className="bg-gray-800 text-white">
       <div className="max-w-[45rem] mx-auto">
         <h1 className="decoration-white text-center text-[2.5rem] p-10">
-          Explora el mundo de iPad, la tableta que te ofrece lo mejor de Apple.
+          Explora el mundo de iPad, la tablet que te ofrece lo mejor de Apple.
         </h1>
       </div>
       <div className="grid place-items-center">
