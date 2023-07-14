@@ -1,7 +1,13 @@
 import  { useState } from "react";
 import validation from "./Validation";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import {useDispatch} from "react-redux";
+import {postCreateUser} from "../../redux/actions"
 
 const CreateUser = () => {
+  const dispatch = useDispatch();
+  const Navigate = useNavigate()
 
   const [form, setForm] = useState({
     name: "",
@@ -25,12 +31,48 @@ const CreateUser = () => {
     setErrors(validation({ ...form, [property]: value }, errors));
   };
 
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    if (
+      form.name &&
+      !errors.name &&
+      form.lastName &&
+      !errors.lastName &&
+      form.email &&
+      !errors.email &&
+      form.password &&
+      !errors.password
+    ) {
+      // if(await dispatch(postCreateUser(form))){
+      //   Navigate("/myprofile");
+      // }
+      const response = await dispatch(postCreateUser(form))
+      
+      if(response.data){
+        Swal.fire({
+          icon: 'success',
+          title: 'Te has registrado con exito',
+          showConfirmButton: false,
+          timer: 1500
+        }).then(res =>Navigate("/myprofile"))
+      }else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Este correo ya fue utilizado',
+        })
+      }
+    }
+  };
+
+  console.log(form);
+
   return (
     <div className="w-screen  h-screen flex flex-col justify-center items-center bg-gray-400">
 
       <div className="w-96 bg-white rounded-lg p-5 gap-7">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Crear Usuario</h1>
-        <form className="flex flex-col gap-5 w-full ">
+        <form className="flex flex-col gap-5 w-full " onSubmit={handleSubmit}>
           <div className="flex flex-col items-start w-full">
             <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="">
               Nombres
@@ -54,7 +96,7 @@ const CreateUser = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
               type="text"
-              name="lastname"
+              name="lastName"
               placeholder="Ej: Castillo Torres"
             />
             {errors.lastName && errors.lastName !== "" && (
