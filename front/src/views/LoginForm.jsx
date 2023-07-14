@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-function Login() {
+function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     //validar y enviar los datos al servidor
     console.log(email, password);
@@ -29,9 +29,10 @@ function Login() {
               type="email"
               id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
               required
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
+              placeholder="email@ejemplo.com"
             />
           </div>
           <div className="mb-4">
@@ -45,9 +46,10 @@ function Login() {
               type="password"
               id="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={e => setPassword(e.target.value)}
               required
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
+              placeholder="Ingresa tu contraseña"
             />
           </div>
           <button
@@ -72,4 +74,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginForm;
