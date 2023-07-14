@@ -33,7 +33,7 @@ const Navbar = () => {
           </span>
         </NavLink>
 
-        <NavLink href="#iPhone" to="/iphone" as={Link} className="text-white ">
+        <NavLink to="/iphone" as={Link} className="text-white ">
           <span className="text-gray-300 hover:text-white text-xl ">
             iPhone
           </span>
