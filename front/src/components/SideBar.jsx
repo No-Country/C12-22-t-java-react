@@ -38,13 +38,13 @@ const SideBar = () => {
                     </span>
                 </NavLink>
 
-                <NavLink href="#mac" to="/mac" as={Link} className=" ml-5 mb-16">
+                <NavLink href="#mac" to="/mac" as={Link} className=" ml-5 mb-12">
                     <span className="text-gray-300 hover:text-white text-xl ">
                         Mac
                     </span>
                 </NavLink>
 
-                <NavLink href="#iPad" to="/ipad" as={Link} className="text-white mb-16 ml-5">
+                <NavLink href="#iPad" to="/ipad" as={Link} className="text-white mb-14 ml-5">
                     <span className="text-gray-300 hover:text-white text-xl ">
                         iPad
                     </span>
