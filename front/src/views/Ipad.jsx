@@ -28,7 +28,7 @@ function IPad() {
         <ul className="grid grid-cols-3 gap-8">
           {products.map(producto => (
             <li key={producto.nombreProducto} className="producto">
-              <div className="bg-gray-50 bg-opacity-10 flex items-center justify-center rounded-2xl">
+              <div className="bg-white flex items-center justify-center rounded-2xl">
                 <img
                   className="w-32 p-4"
                   src={producto.imagen1}

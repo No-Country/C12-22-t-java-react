@@ -8,7 +8,7 @@ const Navbar = () => {
   const searhbar = () => [console.log(product)];
 
   return (
-    <nav className="bg-gray-800 h-24 flex justify-beetwen items-center w-screen">
+    <nav className="bg-gray-800 h-24 flex justify-beetwen items-center w-full">
       <SideBar className="min-[320px]:visible  md:invisible lg:invisible xl:invisible 2xl:invisible " />
       <div className="flex  justify-center items-center ml-6 min-[320px]:invisible sm:invisible md:visible lg:visible xl:visible 2xl:visible">
         <NavLink href="#home" to="/" as={Link}>
