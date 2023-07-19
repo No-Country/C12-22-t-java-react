@@ -37,4 +37,11 @@ public class CategoriaProductService {
         response.setData(new CategoriaProductoResponse(dao.findAll()));
         return new ResponseEntity<CategoriaProductoResponseRest>(response,HttpStatus.OK);
     }
+
+    public ResponseEntity<CategoriaProductoResponseRest>search(String name, String maxPrice, String minPrice){
+        CategoriaProductoResponseRest response = new CategoriaProductoResponseRest();
+
+
+        return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.OK);
+    }
 }

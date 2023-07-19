@@ -9,18 +9,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/new")
+@RequestMapping("/product/search")
 public class CategoriaProductoController {
     @Autowired
     private CategoriaProductService service;
 
-    @PostMapping("/product")
+    @PostMapping("/new")
     public ResponseEntity<CategoriaProductoResponseRest> save(@RequestBody CategoriaProductoDTO model){
         return service.save(model);
     }
+    @GetMapping("")
+    public ResponseEntity<CategoriaProductoResponseRest>search(
+            @RequestParam String name,
+            @RequestParam String maxPrice,
+            @RequestParam String minPrice
+    ){
 
-    @GetMapping("/producto")
-    public  ResponseEntity<CategoriaProductoResponseRest> getAll(){
-        return service.getAll();
+        return service.search(name, maxPrice, minPrice);
     }
+
+
+
 }

@@ -1,11 +1,14 @@
 package com.apple.store.clon.controller;
 
 import com.apple.store.clon.DTO.usuarioRegistroDTO;
+import com.apple.store.clon.model.usuarioModel;
 import com.apple.store.clon.response.RegistroResponseRest;
 import com.apple.store.clon.service.usuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/registro")
@@ -18,7 +21,7 @@ public class registroController {
     }
 
     @GetMapping("")
-    public String getall(){
-        return "holaMundoAll";
+    public List<usuarioModel> getall(){
+        return service.getAll();
     }
 }
