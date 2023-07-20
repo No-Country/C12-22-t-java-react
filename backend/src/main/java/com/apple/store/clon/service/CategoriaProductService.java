@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -27,7 +28,7 @@ public class CategoriaProductService {
         List<CategoriaProductoModel> insert = new ArrayList<>();
         CategoriaModel categoria= new CategoriaModel();
         categoria.setNombreCategoria(model.getCategoria().getNombreCategoria());
-        CategoriaProductoModel nuevoProducto = new CategoriaProductoModel(null,model.getNombreProducto(), model.getPrecio(), model.getImagen1(), model.getImagen2(), model.getImagen3(), model.getImagen4(), model.getDescripcion(), categoria, null);
+        CategoriaProductoModel nuevoProducto = new CategoriaProductoModel(null,model.getNombreProducto(), model.getPrecio(), model.getImagen1(), model.getImagen2(), model.getImagen3(), model.getImagen4(), model.getDescripcion(), model.getTamañoPantalla(), model.getModeloChip(), categoria, null);
         insert.add(dao.save(nuevoProducto));
         response.setData(new CategoriaProductoResponse(insert));
         return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.OK);
@@ -51,6 +52,22 @@ public class CategoriaProductService {
             response.setMetadata("error", "401", "Busqueda no Encontrada");
             return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.BAD_REQUEST);
         }
+        return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.OK);
+    }
+
+    public ResponseEntity<CategoriaProductoResponseRest>findById(Long id){
+        CategoriaProductoResponseRest response = new CategoriaProductoResponseRest();
+        List<CategoriaProductoModel> respuesta= new ArrayList<CategoriaProductoModel>();
+        Optional<CategoriaProductoModel> find = dao.findById(id);
+        if (find.isPresent()){
+            respuesta.add(find.get());
+            response.setData(new CategoriaProductoResponse(respuesta));
+            response.setMetadata("Ok", "200", "id encontrado");
+        }else{
+            response.setMetadata("Error", "400", "id no encontrado");
+            return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.BAD_REQUEST);
+        }
+
         return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.OK);
     }
 }

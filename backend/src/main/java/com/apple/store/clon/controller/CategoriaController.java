@@ -30,7 +30,7 @@ public class CategoriaController {
         return service.save(model);
     }
 
-    @GetMapping("/{categoria}")
+    @GetMapping("/category/{categoria}")
     public  ResponseEntity<CategoriaResponseRest>findByCategory(@PathVariable String categoria){
         return service.findByCategory(categoria);
     }
@@ -38,10 +38,14 @@ public class CategoriaController {
     public ResponseEntity<CategoriaProductoResponseRest> save(@RequestBody CategoriaProductoDTO model){
         return serviceproduct.save(model);
     }
-    @GetMapping("")
+    @GetMapping("/search")
     public ResponseEntity<CategoriaProductoResponseRest>search(
-            @RequestParam String search
+            @RequestParam String name
     ){
-        return serviceproduct.search(search);
+        return serviceproduct.search(name);
+    }
+    @GetMapping("/find/{id}")
+    public ResponseEntity<CategoriaProductoResponseRest> findById(@PathVariable Long id){
+        return serviceproduct.findById(id);
     }
 }

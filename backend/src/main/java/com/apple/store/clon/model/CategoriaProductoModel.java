@@ -11,6 +11,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class CategoriaProductoModel {
+
+
+
     @Id
     @Column(name = "categoria_producto_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +30,10 @@ public class CategoriaProductoModel {
     @Column(name = "imagen_4")
     private String imagen4;
     private String descripcion;
+    @Column(name = "tamaño_pantalla")
+    private String tamañoPantalla;
+    @Column(name = "modelo_chip")
+    private String modeloChip;
     @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "Categoria")
