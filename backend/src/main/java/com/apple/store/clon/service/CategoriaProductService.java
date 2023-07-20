@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoriaProductService {
@@ -38,10 +39,18 @@ public class CategoriaProductService {
         return new ResponseEntity<CategoriaProductoResponseRest>(response,HttpStatus.OK);
     }
 
-    public ResponseEntity<CategoriaProductoResponseRest>search(String name, String maxPrice, String minPrice){
+    public ResponseEntity<CategoriaProductoResponseRest>search(String search){
         CategoriaProductoResponseRest response = new CategoriaProductoResponseRest();
-
-
+        List<CategoriaProductoModel> productos = dao.findAll();
+        List<CategoriaProductoModel> productosFiltrados=productos.stream().
+                filter(c -> c.getNombreProducto().toLowerCase().contains(search)).
+                collect(Collectors.toList());
+        response.setData(new CategoriaProductoResponse(productosFiltrados));
+        response.setMetadata("ok", "200","Busqueda Exitosa");
+        if (productosFiltrados.size()==0){
+            response.setMetadata("error", "401", "Busqueda no Encontrada");
+            return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.OK);
     }
 }

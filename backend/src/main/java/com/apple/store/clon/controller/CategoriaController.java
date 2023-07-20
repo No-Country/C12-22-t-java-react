@@ -1,8 +1,11 @@
 package com.apple.store.clon.controller;
 
 import com.apple.store.clon.DTO.CategoriaDTO;
+import com.apple.store.clon.DTO.CategoriaProductoDTO;
 import com.apple.store.clon.model.CategoriaModel;
+import com.apple.store.clon.response.CategoriaProductoResponseRest;
 import com.apple.store.clon.response.CategoriaResponseRest;
+import com.apple.store.clon.service.CategoriaProductService;
 import com.apple.store.clon.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +18,8 @@ import java.util.List;
 public class CategoriaController {
     @Autowired
     private CategoriaService service;
+    @Autowired
+    private CategoriaProductService serviceproduct;
     @GetMapping("/all")
     public ResponseEntity<CategoriaResponseRest> getAll(){
         return service.getAll();
@@ -28,5 +33,15 @@ public class CategoriaController {
     @GetMapping("/{categoria}")
     public  ResponseEntity<CategoriaResponseRest>findByCategory(@PathVariable String categoria){
         return service.findByCategory(categoria);
+    }
+    @PostMapping("/new")
+    public ResponseEntity<CategoriaProductoResponseRest> save(@RequestBody CategoriaProductoDTO model){
+        return serviceproduct.save(model);
+    }
+    @GetMapping("")
+    public ResponseEntity<CategoriaProductoResponseRest>search(
+            @RequestParam String search
+    ){
+        return serviceproduct.search(search);
     }
 }

@@ -12,9 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 public class CategoriaProductoModel {
     @Id
-    @Column(name = "categoria_producto")
+    @Column(name = "categoria_producto_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
     private Long categoriaProductoId;
     @Column (name = "nombre_producto")
     private String nombreProducto;
