@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+
 import { Link, NavLink } from 'react-router-dom';
 import SideBar from './SideBar';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
-  const [product, setProduct] = useState('');
-
-  const searhbar = () => [console.log(product)];
+  
 
   return (
     <nav className="bg-gray-800 h-24 flex justify-beetwen items-center w-full">
@@ -40,20 +39,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="flex justify-start items-center gap-1.5 ml-40 ">
-        <input
-          placeholder="Buscar..."
-          className="rounded-md p-3 outline-red-900 w-80"
-          value={product}
-          onChange={e => setProduct(e.target.value)}
-        ></input>
-        <button
-          className="text-white bg-gray-500 rounded-md p-3 ml-2 hover:bg-gray-300 hover:text-gray-800 "
-          onClick={searhbar}
-        >
-          <i className="fa-solid fa-magnifying-glass p-0.5"></i>
-        </button>
-      </div>
+      <SearchBar/>
 
       <div className=" flex justify-center items-center ml-56">
         <NavLink
