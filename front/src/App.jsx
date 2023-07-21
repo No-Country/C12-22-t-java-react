@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import LoginForm from './views/LoginForm';
 import CreateUser from './views/CreateUser/CreateUser';
 import Contact from './views/Contact';
+import Detail from './views/Detail';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/createuser" element={<CreateUser />} />
         <Route path="/cart" element={<Cart />} />
         <Route path='/contact' element={<Contact />}/>
+        <Route path='/detail' element={<Detail />}/>
       </Routes>
       </div>
       <Footer />
