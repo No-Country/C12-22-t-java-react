@@ -32,25 +32,25 @@ const SideBar = () => {
             
             <div className="flex  flex-col justify-center self-end ml-9 transition-all duration-600">
 
-                <NavLink href="#home" to="/" as={Link} className="ml-5 mb-12">
+                <NavLink  to="/" as={Link} className="ml-5 mb-12">
                     <span className="text-gray-300 hover:text-white text-xl">
                         Home
                     </span>
                 </NavLink>
 
-                <NavLink href="#mac" to="/mac" as={Link} className=" ml-5 mb-12">
+                <NavLink  to="/mac" as={Link} className=" ml-5 mb-12">
                     <span className="text-gray-300 hover:text-white text-xl ">
                         Mac
                     </span>
                 </NavLink>
 
-                <NavLink href="#iPad" to="/ipad" as={Link} className="text-white mb-14 ml-5">
+                <NavLink to="/ipad" as={Link} className="text-white mb-14 ml-5">
                     <span className="text-gray-300 hover:text-white text-xl ">
                         iPad
                     </span>
                 </NavLink>
 
-                <NavLink href="#iPhone" to="/iphone" as={Link} className="text-white ml-5 mb-14">
+                <NavLink  to="/iphone" as={Link} className="text-white ml-5 mb-14">
                     <span className="text-gray-300 hover:text-white text-xl ">
                         iPhone
                     </span>

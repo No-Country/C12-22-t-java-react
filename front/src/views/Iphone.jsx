@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 const Iphone = () => {
 
     const [iphone, setIphone] = useState([]);
 
     useEffect(() => {
-            const URL_IPHONE ='https://appleclon.onrender.com/product/iphone';
+            const URL_IPHONE ='https://appleclon.onrender.com/product/category/iphone';
             axios.get(URL_IPHONE)
             .then((res) => {
                 const data = res.data.data.model;
@@ -19,7 +21,7 @@ const Iphone = () => {
     }, []);
 
   return (
-    <div className=" bg-slate-700 text-white text-center w-full mx-auto h-full   ">
+    <div className=" bg-slate-700 text-white text-center w-full mx-auto h-   ">
       <h4 className="text-4xl w-1/2 mx-auto py-6">
         Explora la gama de Iphone y elige el que mas se adapte a ti.
       </h4>
@@ -75,12 +77,12 @@ const Iphone = () => {
           <h3 className='font-bold text-4xl mb-4'>Iphone 14 PRO</h3>
           <p className=' text-lg'>Alto rendimiento a un precio sorprendente.</p>
           <p className=' text-lg text-red-300'>¡ Solo por esta semana !</p>
-          <p className='font-bold text-2xl mt-2'>$999</p>
+          <p className='font-bold text-2xl mt-2'>$899</p>
         </div>
       </section>
       <section className='grid grid-cols-1 md:grid-cols-2'>
         {iphone.map((iphone) => (
-            <div className="w-3/5 bg-slate-600 m-auto rounded-xl my-10 p-2 flex flex-col justify-evenly items-center cursor-pointer">
+            <div key={iphone.categoriaProductoId} className="w-3/5 bg-slate-600 m-auto rounded-xl my-10 p-2 flex flex-col justify-evenly items-center cursor-pointer">
                 <img
                 src={iphone.imagen1}
                 alt=""
@@ -88,9 +90,13 @@ const Iphone = () => {
                 />
                 <div>
                 <h3 className='font-bold text-4xl mb-4'>{iphone.nombreProducto}</h3>
-                <p className=' text-lg'>{iphone.descripcion}</p>
+                <p className=' text-lg font-semibold'>Capacidad: 128GB / 256GB / 512GB</p>
+                <p>Podes abonar en efectivo o transferencia</p>
+                <p>12 cuotas sin interes !</p>
                 <p className='font-bold text-2xl mt-2'>${iphone.precio}</p>
                 </div>
+                <Link to={`/detail?productID=${iphone.categoriaProductoId}`} className='border rounded-md p-2 px-3 bg-slate-700 text-gray-300 hover:text-white my-3'>Ver detalle</Link>
+                <button className='border rounded-md p-2 px-3 bg-slate-700 text-gray-300 hover:text-white'>Añadir al carrito <i className=" fa-solid fa-cart-shopping"></i></button>
             </div>
         ))}
       </section>
