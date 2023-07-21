@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
 const Iphone = () => {
-
     const [iphone, setIphone] = useState([]);
 
     useEffect(() => {
@@ -74,6 +73,7 @@ const Iphone = () => {
           className="w-60"
         />
         <div>
+
           <h3 className='font-bold text-4xl mb-4'>Iphone 14 PRO</h3>
           <p className=' text-lg'>Alto rendimiento a un precio sorprendente.</p>
           <p className=' text-lg text-red-300'>¡ Solo por esta semana !</p>
@@ -97,7 +97,9 @@ const Iphone = () => {
                 </div>
                 <Link to={`/detail?productID=${iphone.categoriaProductoId}`} className='border rounded-md p-2 px-3 bg-slate-700 text-gray-300 hover:text-white my-3'>Ver detalle</Link>
                 <button className='border rounded-md p-2 px-3 bg-slate-700 text-gray-300 hover:text-white'>Añadir al carrito <i className=" fa-solid fa-cart-shopping"></i></button>
+
             </div>
+          </div>
         ))}
       </section>
     </div>
