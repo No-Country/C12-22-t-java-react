@@ -13,7 +13,7 @@ CREATE TABLE categoria_producto(
     precio DECIMAL(12,2),
     categoria VARCHAR(50),
     descripcion TEXT,
-    tamaño_pantalla VARCHAR(200),
+    tamano_pantalla VARCHAR(200),
     modelo_chip VARCHAR(200),
     camara VARCHAR(200),
     sistema_operativo VARCHAR(150),

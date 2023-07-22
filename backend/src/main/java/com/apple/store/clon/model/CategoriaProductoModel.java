@@ -30,8 +30,8 @@ public class CategoriaProductoModel {
     @Column(name = "imagen_4")
     private String imagen4;
     private String descripcion;
-    @Column(name = "tamaño_pantalla")
-    private String tamañoPantalla;
+    @Column(name = "tamano_pantalla")
+    private String tamanoPantalla;
     @Column(name = "modelo_chip")
     private String modeloChip;
     private String camara;
