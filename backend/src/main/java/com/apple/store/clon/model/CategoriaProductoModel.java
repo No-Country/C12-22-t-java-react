@@ -34,9 +34,16 @@ public class CategoriaProductoModel {
     private String tamañoPantalla;
     @Column(name = "modelo_chip")
     private String modeloChip;
+    private String camara;
+    @Column(name = "sistema_operativo")
+    private String sistemaOperativo;
+    private String bateria;
+    private String conectividad;
+    private String ram;
+
     @JsonIgnore
     @ManyToOne()
-    @JoinColumn(name = "Categoria")
+    @JoinColumn(name = "categoria")
     private CategoriaModel categoriaModel;
     @ToString.Exclude
     @EqualsAndHashCode.Exclude

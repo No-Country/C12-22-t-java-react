@@ -11,8 +11,15 @@ CREATE TABLE categoria_producto(
     imagen_3 VARCHAR(255),
     imagen_4 VARCHAR(255),
     precio DECIMAL(12,2),
-    Categoria VARCHAR(50),
+    categoria VARCHAR(50),
     descripcion TEXT,
+    tamaño_pantalla VARCHAR(200),
+    modelo_chip VARCHAR(200),
+    camara VARCHAR(200),
+    sistema_operativo VARCHAR(150),
+    bateria VARCHAR(150),
+    conectividad VARCHAR(150),
+    ram VARCHAR(150),
     CONSTRAINT PK_CATEGORIA_PRODUCTO PRIMARY KEY(categoria_producto_id),
     FOREIGN KEY (Categoria) REFERENCES Categoria(nombre_categoria)
 );

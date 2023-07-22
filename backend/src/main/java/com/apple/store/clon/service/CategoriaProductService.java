@@ -28,7 +28,9 @@ public class CategoriaProductService {
         List<CategoriaProductoModel> insert = new ArrayList<>();
         CategoriaModel categoria= new CategoriaModel();
         categoria.setNombreCategoria(model.getCategoria().getNombreCategoria());
-        CategoriaProductoModel nuevoProducto = new CategoriaProductoModel(null,model.getNombreProducto(), model.getPrecio(), model.getImagen1(), model.getImagen2(), model.getImagen3(), model.getImagen4(), model.getDescripcion(), model.getTamañoPantalla(), model.getModeloChip(), categoria, null);
+        CategoriaProductoModel nuevoProducto = new CategoriaProductoModel(null, model.getNombreProducto(), model.getPrecio(), model.getImagen1(),
+                                                  model.getImagen2(), model.getImagen3(), model.getImagen4(), model.getDescripcion(), model.getTamañoPantalla(), model.getModeloChip(),
+                                                    model.getCamara(), model.getSistemaOperativo(), model.getBateria(), model.getConectividad(), model.getRam(), categoria, null) ;
         insert.add(dao.save(nuevoProducto));
         response.setData(new CategoriaProductoResponse(insert));
         return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.OK);

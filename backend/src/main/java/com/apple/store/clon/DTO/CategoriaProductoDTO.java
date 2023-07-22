@@ -17,5 +17,10 @@ public class CategoriaProductoDTO {
     private String tamañoPantalla;
     private String modeloChip;
     private CategoriaDTO categoria;
+    private String camara;
+    private String sistemaOperativo;
+    private String bateria;
+    private String conectividad;
+    private String ram;
 
 }
