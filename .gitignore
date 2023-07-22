@@ -17,6 +17,7 @@ dist-ssr
 !.front/vscode/extensions.json
 front/.idea
 front/.DS_Store
+.idea
 *.suo
 *.ntvs*
 *.njsproj
