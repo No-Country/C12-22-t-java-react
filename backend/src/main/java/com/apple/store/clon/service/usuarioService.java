@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class usuarioService {
     @Autowired
@@ -33,5 +35,9 @@ public class usuarioService {
             response.setMetadata("Registro Exitoso", "200", "OK");
         }
         return new ResponseEntity<RegistroResponseRest>(response, HttpStatus.OK);
+    }
+
+    public List<usuarioModel> getAll(){
+        return dao.findAll();
     }
 }

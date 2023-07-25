@@ -19,6 +19,7 @@
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/response/RegistroResponse.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/DAO/usuarioDAO.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/DTO/CategoriaDTO.java
+/home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/DTO/CategoriaProductSendDTO.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/response/CategoriaResponse.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/model/CategoriaProductoModel.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/response/CategoriaProductoResponse.java
