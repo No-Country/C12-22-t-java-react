@@ -35,3 +35,35 @@ insert into categoria_producto(nombre_producto, imagen_1,imagen_2, imagen_3, ima
         'Mac','Experimente la potencia y el rendimiento del chip Apple M1 con el iMac Green Apple de 24" . El Apple M1 integra la CPU, GPU, Neural Engine, I/O y más en un solo sistema en un chip (SoC). Aborde sus proyectos con la rápida CPU de 8 núcleos y emprenda aplicaciones y juegos con uso intensivo de gráficos con la GPU de 7 núcleos. Acelere las tareas de aprendizaje automático con el motor neuronal de 16 núcleos. Combinado con RAM y SSD, podrá aprovechar al máximo de macOS y otras aplicaciones de Apple. El iMac no solo es más potente, sino que también cuenta con un rediseño completo. Con un grosor de solo 11,5 mm, el iMac de Apple tiene un perfil lateral llamativo y un diseño compacto.',
         1299.30, '-Retina 4.5K de 24 pulgadas -4.480 x 2.520 píxeles (218 ppp) -500 nits, gama cromática alta, True Tone', '-Chip M1 de Apple (CPU de 8 núcleos) -GPU de 7 núcleos / 8 núcleos (según modelo) -Neural Engine de 16 núcleos',
         'FaceTime HD a 1080p', 'macOS Big Sur', '143 W Toma Gigabit Ethernet', 'Wi-Fi 6, Bluetooth 5.0', '8 GB');
+
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('lksjfl45654dfs45', '2022-05-05', 'Black', '16 GB', 1);
+
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('kjfssdf65sdsfg45', '2022-05-05', 'White', '16 GB', 1);
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('lksj543565dfss45', '2022-05-05', 'Black', '32 GB', 1);
+
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('kjf4545455ssdf45', '2022-05-05', 'White', '32 GB', 1);
+
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('kjf4545455ssdf45', '2022-05-05', 'Purple', '64 GB', 1);
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('kjf4545455ssdf45', '2022-05-05', 'Red', '64 GB', 1);
+
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('lksjfl45654dfs45', '2022-05-05', 'Black', '16 GB', 2);
+
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('kjfssdf65sdsfg45', '2022-05-05', 'White', '16 GB', 2);
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('lksj543565dfss45', '2022-05-05', 'Black', '32 GB', 1);
+
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('kjf4545455ssdf45', '2022-05-05', 'White', '32 GB', 2);
+
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+        values ('kjf4545455ssdf45', '2022-05-05', 'Purple', '64 GB', 2);
+insert into producto(numero_serie, fecha_ingreso, color, cantidad_memoria, categoria_producto)
+                values ('kjf4545455ssdf45', '2022-05-05', 'Red', '64 GB', 2);

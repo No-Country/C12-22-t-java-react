@@ -40,9 +40,12 @@ public class CategoriaController {
     }
     @GetMapping("/search")
     public ResponseEntity<CategoriaProductoResponseRest>search(
-            @RequestParam String name
+            @RequestParam (required = false) String name,
+            @RequestParam (required = false) String maxprice,
+            @RequestParam (required = false) String minprice
+
     ){
-        return serviceproduct.search(name);
+        return serviceproduct.search(name, maxprice, minprice);
     }
     @GetMapping("/find/{id}")
     public ResponseEntity<CategoriaProductoResponseRest> findById(@PathVariable Long id){
