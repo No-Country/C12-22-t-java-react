@@ -1,4 +1,4 @@
-import react from 'react';
+
 import Navbar from '../src/components/Navbar';
 import Home from '../src/views/Home';
 import { HashRouter, Routes, Route } from 'react-router-dom';
@@ -16,8 +16,6 @@ import Detail from './views/Detail';
 function App() {
   return (
     <HashRouter>
-    <div className='w-full min-h-screen flex flex-col'>
-    <div className='flex-1'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,9 +29,8 @@ function App() {
         <Route path='/contact' element={<Contact />}/>
         <Route path='/detail' element={<Detail />}/>
       </Routes>
-      </div>
       <Footer />
-      </div>
+
     </HashRouter>
   );
 }

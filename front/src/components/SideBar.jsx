@@ -5,32 +5,20 @@ import { Link, NavLink } from 'react-router-dom';
 const SideBar = () => {
   const [open, setOpen] = useState(false);
 
-  const openMenuHamburguer = () => {
-    setOpen(true)
-  };
-  const closeMenuHamburguer = () => {
-    setOpen(false)
-  };
-
   return (
-    <div className="flex flex-row z-0">
+    <div className="flex md:hidden  z-0">
+          <button className="" onClick={() => setOpen(!open)}>
+            <i className={`fa-solid  text-white ${!open ? "fa-bars" : "fa-x"}`} ></i>
+          </button>
       {
         open == false ? (
         <>
-          <button className="ml-4 sm:visible md:invisible lg:invisible xl:invisible 2xl:invisible" onClick={() => openMenuHamburguer()}>
-            <i className="fa-solid fa-bars text-white"></i>
-          </button>
         </>
       ) : (
         <>
-        <div className="flex justify-start items-center bg-gray-800 w-60 h-screen ">
-          
-            <button className="ml-4" onClick={() => closeMenuHamburguer()}>
-              <i className="fa-solid fa-x text-white"></i>
-              
-            </button>
+        <div className="flex bg-gray-800 w-60  h-96">
             
-            <div className="flex  flex-col justify-center self-end ml-9 transition-all duration-600">
+            <div className="flex flex-col justify-center self-end  transition-all duration-600">
 
                 <NavLink  to="/" as={Link} className="ml-5 mb-12">
                     <span className="text-gray-300 hover:text-white text-xl">
