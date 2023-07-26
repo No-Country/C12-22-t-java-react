@@ -5,7 +5,7 @@ const Mac = () => {
   const [macbook, setMacbook] = useState([]);
 
   useEffect(() => {
-    const urlMacbook = 'https://appleclon.onrender.com/product/mac';
+    const urlMacbook = 'https://appleclon.onrender.com/product/category/mac';
     axios
       .get(urlMacbook)
       .then(res => {
@@ -19,37 +19,29 @@ const Mac = () => {
   }, []);
   console.log(macbook);
 
-  const addProduct = () => {
-    alert('Macbook añadida al carrito');
-  };
   return (
-    <div className=" text-center w-full mx-auto h-full">
+    <div className=" bg-slate-700 text-white text-center w-full mx-auto">
       <section className="flex flex-col justify-center align-self ">
         <h1 className="font-semibold mt-6 text-4xl">Macbook</h1>
         <p className="mt-6">{macbook[0]?.descripcion}</p>
       </section>
-      <h2 className='text-gray-800 text-2xl mt-4'>Macbok Pro</h2>
-      <section className="flex justify-center">
-        <ul>
-          {macbook.map(mac => (
-            <li
-              className="border-solid  border border-gray-600 p-8 rounded-xl mt-6 mb-10"
-              key={mac.imagen1}
-            >
-              <img src={mac.imagen1} />
-              <div className="flex justify-center align-self mt-5 ">
-                <p>
-                  USD <b>{mac.precio}</b>
-                </p>
-                <i
-                  className="fa-solid fa-cart-plus ml-3 mt-1 hover:text-sky-400 "
-                  onClick={() => addProduct()}
-                ></i>
+      <h2 className='text-white text-5xl mt-4'>Macbok Pro</h2>
+      <section className="w-3/5 bg-slate-700 m-auto rounded-xl  p-2 flex justify-evenly items-center cursor-pointer">
+        {
+          macbook.map((mac,index)=>(
+            <div className='p-4' key={index}>
+              <img src={macbook[0]?.imagen1} alt="" />
+              <div>
+                <h3 className='font-bold text-4xl mb-4'>{macbook[0]?.nombrePruducto}</h3>
+                <p className=" text-lg">{macbook[0]?.modeloChip}</p>
+                <p className=" text-lg text-red-300">{macbook[0]?.sistemaOperativo}</p>
+                <p className="font-bold text-2xl ">{macbook[0]?.precio}</p>
               </div>
-            </li>
-          ))}
-        </ul>
+            </div>
+          ))
+        }
       </section>
+      
     </div>
   );
 };
