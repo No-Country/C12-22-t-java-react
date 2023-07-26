@@ -36,6 +36,7 @@ public class CategoriaService {
     }
 
     public ResponseEntity<CategoriaResponseRest> findByCategory(String category){
+        category= category.toUpperCase().charAt(0) + category.substring(1, category.length()).toLowerCase();
         CategoriaResponseRest response = new CategoriaResponseRest();
         CategoriaModel categoriaBuscar = dao.findByNombreCategoria(category);
         if (categoriaBuscar!=null){

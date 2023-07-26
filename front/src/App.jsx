@@ -1,4 +1,4 @@
-import react from 'react';
+
 import Navbar from '../src/components/Navbar';
 import Home from '../src/views/Home';
 import { HashRouter, Routes, Route } from 'react-router-dom';

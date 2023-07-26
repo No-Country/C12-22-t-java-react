@@ -20,7 +20,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div className="flex justify-start items-center gap-1.5 ml-40 ">
+        <div className="xl:flex xl:justify-start hidden  xl:items-center gap-1.5 ml-40 ">
             <form onSubmit={onSubmit}>
                 <input
                     type="text"
