@@ -16,8 +16,6 @@ import Detail from './views/Detail';
 function App() {
   return (
     <HashRouter>
-    <div className='w-full min-h-screen flex flex-col'>
-    <div className='flex-1'>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,12 +26,10 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/createuser" element={<CreateUser />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path='/contact' element={<Contact />}/>
-        <Route path='/detail' element={<Detail />}/>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
-      </div>
       <Footer />
-      </div>
     </HashRouter>
   );
 }
