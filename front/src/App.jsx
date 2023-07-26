@@ -26,11 +26,10 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/createuser" element={<CreateUser />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path='/contact' element={<Contact />}/>
-        <Route path='/detail' element={<Detail />}/>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
       <Footer />
-
     </HashRouter>
   );
 }
