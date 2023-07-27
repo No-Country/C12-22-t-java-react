@@ -6,7 +6,7 @@ import LinkOptions from '../components/LinkOptions';
 const Home = () => {
   const [allProducts, setAllProducts] = useState([]);
 
-  console.log(allProducts)
+  console.log(allProducts);
   useEffect(() => {
     axios
       .get('https://appleclon.onrender.com/product/all')
@@ -22,18 +22,17 @@ const Home = () => {
 
   return (
     <div className="bg-gray-800 text-white px-8 md:px-16">
-      <section className="bg-white flex flex-col md:flex-row items-center justify-center rounded-2xl p-8 text-gray-700 h-11/12  gap-[5rem]">
-        <div className="w-full text-center md:text-start">
-          <h1 className="text-[2rem] leading-none md:text-6xl font-bold  ">
+      <section className="bg-white flex flex-col md:flex-row items-center justify-center rounded-2xl p-8 md:pt-16 text-gray-700 h-11/12  gap-[5rem] md:gap-36">
+        <div className="md:w-2/5 text-center md:text-start">
+          <h1 className="text-[2rem] leading-none md:text-4xl lg:text-6xl font-bold  ">
             Alto rendimiento a un precio sorprendente.
           </h1>
-          <p className="py-6 text-sm md:text-2xl md:text-start">
+          <p className="py-6 text-sm md:text-xl lg:text-2xl md:text-start">
             El iPhone 13 ya está aquí. Haz fotos increíbles, disfruta de las
             funciones de seguridad mejor valoradas y aprovecha toda la potencia
             de Apple.{' '}
           </p>
-          <Link
-            to={`/detail/3`}
+          <Link to={`/detail/${allProducts[1]?.productos[2]?.categoriaProductoId}`}
             className="py-2 bg-white  border-solid border-2 border-gray-700 hover:bg-gray-700 hover:text-white
                       shadow  w-full sm:w-auto px-4 rounded-md text-lg
                       transition ease-in duration-out m-auto text-center"
@@ -65,7 +64,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 md:py-32 flex items-center justify-center flex-col">
+      <section className="py-20 md:py-36 flex items-center justify-center flex-col">
         <div className="order-1">
           <h1 className="text-lg md:text-5xl text-center pb-12">
             POPULARES EN APPLE STORE
@@ -93,7 +92,7 @@ const Home = () => {
                   </p>
                   <Link
                     to={`/detail/${product.categoriaProductoId}`}
-                    className="py-1 border-solid border-2 border-green-600 bg-white hover:bg-green-600 text-green-600 hover:text-white
+                    className="py-1 border-solid border-2 border-gray-700 bg-white hover:bg-gray-700 text-gray-700 hover:text-white
                       shadow  px-2 rounded-md text-lg
                       transition ease-in duration-out m-auto text-center"
                   >

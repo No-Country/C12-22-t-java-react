@@ -42,14 +42,15 @@ function Ipad() {
                   {products[1].descripcion}
                 </p>
                 <h3 className="font-bold pb-4">$ {products[1].precio}</h3>
-                <button
+                <Link
+                  to={`/detail/${products[1].categoriaProductoId}`}
                   type="submit"
                   className="py-2 bg-white  border-solid border-2 border-gray-700 hover:bg-gray-700 hover:text-white
                     shadow sm:w-auto px-2 md:px-4 rounded-md text-lg
                     transition ease-in duration-out m-auto text-center"
                 >
                   Ver Más
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -75,7 +76,7 @@ function Ipad() {
                   $ {producto.precio}
                 </p>
                 <Link
-                  to={`/detail?productID=${producto.categoriaProductoId}`}
+                  to={`/detail/${producto.categoriaProductoId}`}
                   className="py-1 border-solid border-2 border-gray-700 bg-white hover:bg-gray-700 text-gray-700 hover:text-white
                       shadow  px-2 rounded-md text-lg
                       transition ease-in duration-out m-auto text-center"
