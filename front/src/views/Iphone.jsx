@@ -22,7 +22,7 @@ function Ipad() {
     <div className="bg-gray-800 text-white px-8 md:px-16">
       <section className="max-w-[60rem] mx-auto ">
         <h1 className="decoration-white text-center text-sm md:text-5xl p-4 md:p-12 font-bold">
-        Si quieres un smartphone que lo tenga todo, necesitas un iPhone.
+          Si quieres un smartphone que lo tenga todo, necesitas un iPhone.
         </h1>
       </section>
       <section className="bg-white flex flex-col md:flex-row items-center justify-center rounded-md md:rounded-2xl p-4 md:p-8 text-gray-700  gap-[5rem]">
@@ -55,7 +55,7 @@ function Ipad() {
           </div>
         )}
       </section>
-      <section className='mt-12'>
+      <section className="mt-12">
         <ul className="flex flex-col md:flex-row items-center justify-center flex-wrap gap-12 md:pt-32">
           {products.map(producto => (
             <li

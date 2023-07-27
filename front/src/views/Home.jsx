@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios, { all } from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import LinkOptions from '../components/LinkOptions';
 
 const Home = () => {
   const [allProducts, setAllProducts] = useState([]);
 
-  console.log(allProducts)
+  console.log(allProducts);
   useEffect(() => {
     axios
       .get('https://appleclon.onrender.com/product/all')
@@ -79,7 +79,6 @@ const Home = () => {
                   key={product.nombreProducto}
                   className="bg-white items-center justify-center border rounded-lg p-4 flex flex-col"
                 >
-                  
                   <img
                     className="h-40 w-40"
                     src={product.imagen1}
@@ -94,20 +93,18 @@ const Home = () => {
                   <Link
                     to={`/detail?productID=${allProducts.categoriaProductoId}`}
                     className="py-1 border-solid border-2 border-gray-700 bg-white hover:bg-gray-700 text-gray-700 hover:text-white
-                    to={`/detail/${product.categoriaProductoId}`}
-                    className="py-1 border-solid border-2 border-green-600 bg-white hover:bg-green-600 text-green-600 hover:text-white
                       shadow  px-2 rounded-md text-lg
                       transition ease-in duration-out m-auto text-center"
                   >
                     Ver Mas
                   </Link>
                 </div>
-                
               ))}
             </React.Fragment>
           ))}
         </div>
       </section>
+
       <section>
         <LinkOptions></LinkOptions>
       </section>
