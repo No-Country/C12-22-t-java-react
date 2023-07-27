@@ -55,7 +55,7 @@ function Ipad() {
           </div>
         )}
       </section>
-      <section className='mt-12'>
+      <section className="mt-12">
         <ul className="flex flex-col md:flex-row items-center justify-center flex-wrap gap-12 md:pt-32">
           {products.map(producto => (
             <li
