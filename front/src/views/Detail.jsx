@@ -1,54 +1,65 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useParams } from "react-router-dom";
 
 const Detail = () => {
-  const [productDetail, setProductDetail] = useState();
+  const [products, setProducts] = useState([]);
+  const {id} = useParams();
 
-  let query = new URLSearchParams(window.location.search);
-  let productID = query.get('productID');
-  console.log(productID);
+
+  console.log(products)
 
   useEffect(() => {
-    const endpoint = `https://appleclon.onrender.com/product/find/1`;
+    axios
+      .get('https://appleclon.onrender.com/product/all')
+      .then(res => {
+        const products = res.data.data.model;
+        products?.map((pdetail) =>{
+          pdetail.productos.map((products)=>{
+            if(products.categoriaProductoId == id){
+              setProducts(products);
+            }
+          })
+        })
 
-    console.log(endpoint);
-
-    axios.get(endpoint).then(res => {
-      const data = res.data.data.model;
-      const apiData = data[0];
-      console.log(apiData);
-      setProductDetail(apiData);
-    });
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }, []);
+
 
   return (
     <div className=" bg-slate-700 text-white text-center w-full mx-auto h-full">
-      <div className=''>
-        <h2 className="font-bold text-4xl mb-4">Detalle</h2>
-        {productDetail && (
+      <div className=' py-12 flex'>
+        
+        {products && (
           <section
-            key={productDetail.categoriaProductoId}
-            className="w-4/5 bg-slate-600 m-auto rounded-xl my-16 p-6 flex justify-evenly items-center gap-4"
+            key={products.categoriaProductoId}
+            className="w-3/5 bg-slate-600 m-auto rounded-xl  p-6 flex-col  justify-center items-center gap-4"
           >
-            <img
-              src={productDetail.imagen2}
-              alt={productDetail.nombreProducto}
-              className="w-80 h-fit"
-            />
-            <div>
               <h3 className="font-bold text-5xl mb-4">
-                {productDetail.nombreProducto}
+                {products.nombreProducto}
               </h3>
+            <img
+              src={products.imagen2}
+              alt={products.nombreProducto}
+              className="mx-auto"
+            />
+            <div className='flex flex-col gap-4'>
               <p className=' text-lg font-semibold'>Capacidad: 128GB / 256GB / 512GB</p>
-              <p className=" text-md">{productDetail.descripcion}</p>
-              <p className=" text-lg text-red-300">
-                {productDetail.tamañoPantalla}
+              <p className=" text-md">{products.descripcion}</p>
+              <p className=" text-lg ">
+                {products.tamañoPantalla}
               </p>
-              <p className=" text-lg text-red-300">
-                {productDetail.modeloChip}
+              <p className=" text-lg ">
+                {products.modeloChip}
               </p>
-              <p className="font-bold text-4xl mt-2">${productDetail.precio}</p>
-              <button className='border rounded-md mt-2 p-2 px-3 bg-slate-700 text-gray-300 hover:text-white'>Añadir al carrito <i className=" fa-solid fa-cart-shopping"></i></button>
+              <p>
+
+              </p>
+              <p className="font-bold text-4xl mt-2">${products.precio}</p>
+              <button className=' w-40 mx-auto border rounded-md mt-2 p-2 px-3 bg-slate-700 text-gray-300 hover:text-white'>Añadir al carrito <i className=" fa-solid fa-cart-shopping"></i></button>
             </div>
           </section>
         )}

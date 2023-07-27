@@ -16,20 +16,22 @@ import Detail from './views/Detail';
 function App() {
   return (
     <HashRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/mac" element={<Mac />} />
-        <Route path="/ipad" element={<Ipad />} />
-        <Route path="/iphone" element={<Iphone />} />
-        <Route path="/myprofile" element={<MyProfile />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/createuser" element={<CreateUser />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/detail" element={<Detail />} />
-      </Routes>
-      <Footer />
+
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mac" element={<Mac />} />
+          <Route path="/ipad" element={<Ipad />} />
+          <Route path="/iphone" element={<Iphone />} />
+          <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/createuser" element={<CreateUser />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/detail/:id" element={<Detail />} />
+        </Routes>
+        <Footer />
+
     </HashRouter>
   );
 }
