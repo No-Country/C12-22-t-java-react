@@ -1,116 +1,94 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const Iphone = () => {
-  const [iphone, setIphone] = useState([]);
+function Ipad() {
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const URL_IPHONE = 'https://appleclon.onrender.com/product/category/iphone';
     axios
-      .get(URL_IPHONE)
+      .get('https://appleclon.onrender.com/product/category/iphone')
       .then(res => {
-        const data = res.data.data.model;
-        const iphone = data[0].productos;
-        setIphone(iphone);
+        console.log(res.data);
+        const products = res.data.data.model[0].productos;
+        setProducts(products);
       })
       .catch(error => {
-        console.log(error);
+        console.error(error);
       });
   }, []);
 
   return (
-    <div className=" bg-slate-700 text-white text-center w-full mx-auto h-   ">
-      <h4 className="text-4xl w-1/2 mx-auto py-6">
-        Explora la gama de Iphone y elige el que mas se adapte a ti.
-      </h4>
-      <section className="flex justify-center gap-8 mt-6">
-        <div className="text-center cursor-pointer">
-          <img
-            src="https://www.pngall.com/wp-content/uploads/5/Apple-iPhone-12.png"
-            alt=""
-            className="w-14"
-          />
-          <span className="text-center">Iphone 8</span>
-        </div>
-        <div className="text-center cursor-pointer">
-          <img
-            src="https://www.pngall.com/wp-content/uploads/5/Apple-iPhone-12.png"
-            alt=""
-            className="w-14"
-          />
-          <span className="text-center">Iphone 11</span>
-        </div>
-        <div className="text-center cursor-pointer">
-          <img
-            src="https://www.pngall.com/wp-content/uploads/5/Apple-iPhone-12.png"
-            alt=""
-            className="w-14"
-          />
-          <span className="text-center">Iphone 12</span>
-        </div>
-        <div className="text-center cursor-pointer">
-          <img
-            src="https://www.pngall.com/wp-content/uploads/5/Apple-iPhone-12.png"
-            alt=""
-            className="w-14"
-          />
-          <span className="text-center">Iphone 13</span>
-        </div>
-        <div className="text-center cursor-pointer">
-          <img
-            src="https://www.pngall.com/wp-content/uploads/5/Apple-iPhone-12.png"
-            alt=""
-            className="w-14"
-          />
-          <span className="text-center">Iphone 14</span>
-        </div>
+    <div className="bg-gray-800 text-white px-8 md:px-16">
+      <section className="max-w-[60rem] mx-auto ">
+        <h1 className="decoration-white text-center text-sm md:text-5xl p-4 md:p-12 font-bold">
+        Si quieres un smartphone que lo tenga todo, necesitas un iPhone.
+        </h1>
       </section>
-      <section className="w-3/5 bg-slate-600 m-auto rounded-xl my-10 p-2 flex justify-evenly items-center cursor-pointer">
-        <img
-          src="https://www.pngall.com/wp-content/uploads/13/iPhone-14-PNG.png"
-          alt=""
-          className="w-60"
-        />
-        <div>
-          <h3 className="font-bold text-4xl mb-4">Iphone 14 PRO</h3>
-          <p className=" text-lg">Alto rendimiento a un precio sorprendente.</p>
-          <p className=" text-lg text-red-300">¡ Solo por esta semana !</p>
-          <p className="font-bold text-2xl mt-2">$899</p>
-        </div>
-      </section>
-      <section className="grid grid-cols-1 md:grid-cols-2">
-        {iphone.map(iphone => (
-          <div
-            key={iphone.categoriaProductoId}
-            className="w-3/5 bg-slate-600 m-auto rounded-xl my-10 p-2 flex flex-col justify-evenly items-center cursor-pointer"
-          >
-            <img src={iphone.imagen1} alt="" className="w-48 rounded-xl" />
-            <div>
-              <h3 className="font-bold text-4xl mb-4">
-                {iphone.nombreProducto}
-              </h3>
-              <p className=" text-lg font-semibold">
-                Capacidad: 128GB / 256GB / 512GB
-              </p>
-              <p>Podes abonar en efectivo o transferencia</p>
-              <p>12 cuotas sin interes !</p>
-              <p className="font-bold text-2xl mt-2">${iphone.precio}</p>
+      <section className="bg-white flex flex-col md:flex-row items-center justify-center rounded-md md:rounded-2xl p-4 md:p-8 text-gray-700  gap-[5rem]">
+        {products.length > 0 && (
+          <div className="flex flex-col md:flex-row items-center justify-center w-full text-center md:text-start">
+            <img
+              className="w-1/3 mx-auto"
+              src={products[1].imagen1}
+              alt={products[1].nombreProducto}
+            />
+            <div className="flex items-center md:p-8">
+              <div>
+                <h2 className="text-base md:text-5xl font-bold py-2 md:py-8">
+                  {products[1].nombreProducto}
+                </h2>
+                <p className="pb-4 text-base md:text-xl">
+                  {products[1].descripcion}
+                </p>
+                <h3 className="font-bold pb-4">$ {products[1].precio}</h3>
+                <button
+                  type="submit"
+                  className="py-2 bg-white  border-solid border-2 border-gray-700 hover:bg-gray-700 hover:text-white
+                    shadow sm:w-auto px-2 md:px-4 rounded-md text-lg
+                    transition ease-in duration-out m-auto text-center"
+                >
+                  Ver Más
+                </button>
+              </div>
             </div>
-            <Link
-              to={`/detail?productID=${iphone.categoriaProductoId}`}
-              className="border rounded-md p-2 px-3 bg-slate-700 text-gray-300 hover:text-white my-3"
-            >
-              Ver detalle
-            </Link>
-            <button className="border rounded-md p-2 px-3 bg-slate-700 text-gray-300 hover:text-white">
-              Añadir al carrito <i className=" fa-solid fa-cart-shopping"></i>
-            </button>
           </div>
-        ))}
+        )}
+      </section>
+      <section className='mt-12'>
+        <ul className="flex flex-col md:flex-row items-center justify-center flex-wrap gap-12 md:pt-32">
+          {products.map(producto => (
+            <li
+              key={producto.nombreProducto}
+              className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/5"
+            >
+              <div className="flex items-center justify-center flex-wrap bg-white rounded-md md:rounded-lg pb-8 text-gray-700 flex-col">
+                <img
+                  className="w-44 h-36 p-4"
+                  src={producto.imagen1}
+                  alt={producto.nombreProducto}
+                />
+                <h3 className="text-center text-gray-700 text-xl font-bold self-center mt-2">
+                  {producto.nombreProducto}
+                </h3>
+                <p className="text-center text-gray-700 font-extrabold self-center mt-2 pb-2">
+                  $ {producto.precio}
+                </p>
+                <Link
+                  to={`/detail?productID=${producto.categoriaProductoId}`}
+                  className="py-1 border-solid border-2 border-gray-700 bg-white hover:bg-gray-700 text-gray-700 hover:text-white
+                      shadow  px-2 rounded-md text-lg
+                      transition ease-in duration-out m-auto text-center"
+                >
+                  Ver Mas
+                </Link>
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );
-};
+}
 
-export default Iphone;
+export default Ipad;

@@ -2,9 +2,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 px-12 text-white pt-32 text-center md:text-left">
+    <footer className="bg-gray-800 px-12 md:px-16 text-white pt-4 md:pt-32 text-center md:text-left">
       <hr />
-      <div className="flex item-center justify-center flex-wrap gap-8 md:gap-36 text-xl p-4">
+      <div className="flex item-center justify-center flex-wrap gap-8 md:gap-8 lg:gap-x-36 lg:gap-y-8 text-xl p-4">
         <div>
           <i className="fa-brands fa-apple text-gray-200 hover:text-white text-3xl pr-4"></i>
           <p>
