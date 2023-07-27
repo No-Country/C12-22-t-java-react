@@ -21,9 +21,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-gray-800 text-white px-8 md:px-16">
-      <section className="bg-white flex flex-col md:flex-row items-center justify-center rounded-2xl p-8 text-gray-700 h-11/12  gap-[5rem]">
-        <div className="w-full text-center md:text-start">
+    <div className="bg-gray-800 text-white px-8 md:px-16 md:pt-16">
+      <section className="bg-white flex flex-col md:flex-row items-center justify-center rounded-2xl p-8 text-gray-700 h-11/12 gap-8 md:gap-44">
+        <div className="md:w-2/5 text-center md:text-start">
           <h1 className="text-[2rem] leading-none md:text-6xl font-bold  ">
             Alto rendimiento a un precio sorprendente.
           </h1>
@@ -92,6 +92,8 @@ const Home = () => {
                     $ {product.precio}
                   </p>
                   <Link
+                    to={`/detail?productID=${allProducts.categoriaProductoId}`}
+                    className="py-1 border-solid border-2 border-gray-700 bg-white hover:bg-gray-700 text-gray-700 hover:text-white
                     to={`/detail/${product.categoriaProductoId}`}
                     className="py-1 border-solid border-2 border-green-600 bg-white hover:bg-green-600 text-green-600 hover:text-white
                       shadow  px-2 rounded-md text-lg
