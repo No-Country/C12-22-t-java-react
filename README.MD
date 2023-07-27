@@ -12,7 +12,7 @@ Es una plataforma tienda online con productos de apple. el cual permite a los cl
 - Lombok
 - Spring Security
 - Swagger
-- -h2 Data base
+- h2 Data base
 
 ## TEAM
 ### FRONTEND
@@ -20,7 +20,9 @@ Es una plataforma tienda online con productos de apple. el cual permite a los cl
 | ------------- | ------------- |
 | **Yeiner**  | **Carlos Benites**|
 | [![portfolioYener](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/yeinerpb) [![linkedinYener](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]()|[![portfolioCarlos](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Lewno) [![linkedinCarlos](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]()| 
+
 ### BACKEND
+
 |<img src="https://media.licdn.com/dms/image/C4D03AQGSgwjmkSPZZQ/profile-displayphoto-shrink_200_200/0/1655396216991?e=1695859200&v=beta&t=AKS62WvqQNeTnOlxtRrhXeW64gJud0SQD6MPz2d81Eo" width=100>|
 |------------- | -------------|
 | **Marvin Archila** | 
