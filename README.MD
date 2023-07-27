@@ -19,7 +19,7 @@ Es una plataforma tienda online con productos de apple. el cual permite a los cl
 |<img src="https://avatars.githubusercontent.com/u/98791176?v=4" width=100>| <img src="https://avatars.githubusercontent.com/u/87684519?v=4" width=100>|
 | :-------------: | :-------------: |
 | **Yeiner** | **Carlos Benites** |
-| [![portfolioYener](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/yeinerpb) [![linkedinYener](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]()|[![portfolioCarlos](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Lewno) [![linkedinCarlos](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]()| 
+| [![portfolioYener](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/yeinerpb) [![linkedinYener](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yeiner-parra-bernal/)|[![portfolioCarlos](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Lewno) [![linkedinCarlos](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlos-aaron-benites-acevedo/)| 
 
 ### BACKEND
 
