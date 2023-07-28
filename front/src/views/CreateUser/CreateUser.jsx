@@ -68,21 +68,21 @@ const CreateUser = () => {
   console.log(form);
 
   return (
-    <div className="w-screen  h-screen flex flex-col justify-center items-center bg-gray-400">
+    <div className="login bg-gray-800 min-h-screen flex items-center justify-center">
 
-      <div className="w-96 bg-white rounded-lg p-5 gap-7">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Crear Usuario</h1>
+      <div className="w-96 bg-gray-800 rounded-lg p-5 gap-7">
+        <h1 className="text-3xl text-white font-bold mb-4">Crear Usuario</h1>
         <form className="flex flex-col gap-5 w-full " onSubmit={handleSubmit}>
           <div className="flex flex-col items-start w-full">
             <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="">
-              Nombres
+              
             </label>
             <input
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
+              className="bg-gray-800 w-full text-white border border-b border-white border-solid border-t-0 border-l-0 border-r-0 focus:outline-none mt-8"
               type="text"
               name="name"
-              placeholder="Ej: Juan Carlos"
+              placeholder="Nombre"
             />
             {errors.name && errors.name !== "" && (
               <span className=" text-rose-600">{errors.name}</span>
@@ -90,14 +90,14 @@ const CreateUser = () => {
           </div>
           <div className="flex flex-col items-start w-full">
             <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="">
-              Apellidos
+              
             </label>
             <input
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
+              className="bg-gray-800 w-full text-white border border-b border-white border-solid border-t-0 border-l-0 border-r-0 focus:outline-none mt-8"
               type="text"
               name="lastName"
-              placeholder="Ej: Castillo Torres"
+              placeholder="Apellidos"
             />
             {errors.lastName && errors.lastName !== "" && (
               <span className=" text-rose-600">{errors.lastName}</span>
@@ -105,14 +105,14 @@ const CreateUser = () => {
           </div>
           <div className="flex flex-col items-start w-full">
             <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="">
-              Email
+              
             </label>
             <input
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
+              className="bg-gray-800 w-full text-white border border-b border-white border-solid border-t-0 border-l-0 border-r-0 focus:outline-none mt-8"
               type="text"
               name="email"
-              placeholder="Ej: JuanTo@gmail.com"
+              placeholder="Email"
             />
             {errors.email && errors.email !== "" && (
               <span className=" text-rose-600">{errors.email}</span>
@@ -120,11 +120,11 @@ const CreateUser = () => {
           </div>
           <div className="flex flex-col items-start w-full">
             <label className="font-boblock text-gray-600 text-sm font-medium mb-2" htmlFor="">
-              Contraseña
+              
             </label>
             <input
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-black-500 focus:ring focus:ring-black-200"
+              className="bg-gray-800 w-full text-white border border-b border-white border-solid border-t-0 border-l-0 border-r-0 focus:outline-none mt-8"
               type="password"
               name="password"
               placeholder="Contraseña"
@@ -136,7 +136,7 @@ const CreateUser = () => {
 
           <div>
             <button
-              className="w-full bg-black text-white rounded-md px-3 py-2 hover:bg-gray-900 focus:outline-none focus:bg-gray-900"
+              className="w-full bg-gray-800 hover:bg-white text-white hover:text-gray-800 border border-white rounded-md px-3 py-2 mt-8"
               type="submit"
             >
               Enviar
