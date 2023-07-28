@@ -13,6 +13,7 @@ com/apple/store/clon/model/ProductoModel.class
 com/apple/store/clon/ClonApplication$1.class
 com/apple/store/clon/response/ResponseRest.class
 com/apple/store/clon/controller/CategoriaController.class
+com/apple/store/clon/controller/SalesController.class
 com/apple/store/clon/model/CategoriaModel.class
 com/apple/store/clon/DTO/CategoriaDTO.class
 com/apple/store/clon/service/CategoriaProductService.class
@@ -22,4 +23,6 @@ com/apple/store/clon/service/CategoriaService.class
 com/apple/store/clon/ClonApplication.class
 com/apple/store/clon/response/CategoriaResponse.class
 com/apple/store/clon/service/usuarioService.class
+com/apple/store/clon/DTO/ProductoCompraDTO.class
+com/apple/store/clon/DTO/CompraDTO.class
 com/apple/store/clon/DAO/usuarioDAO.class

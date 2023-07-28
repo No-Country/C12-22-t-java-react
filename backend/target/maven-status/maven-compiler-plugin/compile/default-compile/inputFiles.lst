@@ -1,4 +1,5 @@
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/security/WebSecurityConfig.java
+/home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/DTO/ProductoCompraDTO.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/security/UserDetailServiceImpl.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/model/CategoriaModel.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/model/ProductoModel.java
@@ -9,6 +10,7 @@
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/ClonApplication.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/model/usuarioModel.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/response/ResponseRest.java
+/home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/DTO/CompraDTO.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/response/CategoriaResponseRest.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/security/JWTAuthorizationFilter.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/response/CategoriaProductoResponseRest.java
@@ -29,6 +31,8 @@
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/response/CategoriaResponse.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/model/CategoriaProductoModel.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/response/CategoriaProductoResponse.java
+/home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/DTO/ReporteCompraDTO.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/security/AuthCredentials.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/security/UserDetailsImpl.java
 /home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/DTO/usuarioRegistroDTO.java
+/home/david/Documents/No_country/C12-22-t-java-react/backend/src/main/java/com/apple/store/clon/controller/SalesController.java
