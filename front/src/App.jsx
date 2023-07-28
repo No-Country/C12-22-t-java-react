@@ -12,12 +12,12 @@ import LoginForm from './views/LoginForm';
 import CreateUser from './views/CreateUser/CreateUser';
 import Contact from './views/Contact';
 import Detail from './views/Detail';
+import Products from './views/Products';
 
 function App() {
   return (
     <HashRouter>
-
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mac" element={<Mac />} />
@@ -27,6 +27,7 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/createuser" element={<CreateUser />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/detail/:id" element={<Detail />} />
         </Routes>

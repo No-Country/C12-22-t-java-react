@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProducts } from "../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
     const [search, setSearch] = useState("");
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const products = useSelector((state) => state.products);
 
     console.log(products);
@@ -15,7 +17,15 @@ const SearchBar = () => {
     const onSubmit = (e) =>{
         e.preventDefault();
         if (search.length === 0) return alert("Debes ingresar un producto");
-        dispatch(searchProducts(search.toLowerCase()));
+        if (window.location.pathname !== "/products") {
+            navigate("/products");
+            setTimeout(() => {
+                dispatch(searchProducts(search.toLowerCase()));
+            }, 100);
+          }
+          if (window.location.pathname === "/products") {
+            dispatch(searchProducts(search.toLowerCase()));
+          }
         setSearch("");
     }
 

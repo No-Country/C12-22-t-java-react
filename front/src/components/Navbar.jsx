@@ -7,7 +7,7 @@ const Navbar = () => {
   
 
   return (
-    <header className="bg-gray-800   w-full">
+    <header className="bg-gray-800  w-full">
       <nav className='h-24 flex  justify-between m-auto w-4/5'>
         <SideBar />
         <div className="md:flex hidden md:justify-center md:items-center ">
