@@ -18,7 +18,6 @@ com/apple/store/clon/DTO/CategoriaDTO.class
 com/apple/store/clon/service/CategoriaProductService.class
 com/apple/store/clon/model/usuarioModel.class
 com/apple/store/clon/controller/CategoriaProductoController.class
-com/apple/store/clon/security.class
 com/apple/store/clon/service/CategoriaService.class
 com/apple/store/clon/ClonApplication.class
 com/apple/store/clon/response/CategoriaResponse.class

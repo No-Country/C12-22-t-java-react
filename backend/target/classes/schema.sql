@@ -34,3 +34,19 @@ CREATE TABLE producto(
     CONSTRAINT PK_PRODUCTO PRIMARY KEY(producto_id),
     FOREIGN KEY (categoria_producto) REFERENCES categoria_producto(categoria_producto_id)
 );
+
+CREATE TABLE usuario(
+    user_id LONG AUTO_INCREMENT NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    direccion VARCHAR(150),
+    telefono VARCHAR(50),
+    nombres VARCHAR(150),
+    apellidos VARCHAR(150),
+    fecha_nacimiento DATE,
+    pais VARCHAR(50),
+    ciudad VARCHAR(50),
+    sexo VARCHAR(50),
+
+    CONSTRAINT PK_USUARIO PRIMARY KEY(user_id)
+);

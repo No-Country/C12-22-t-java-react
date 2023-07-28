@@ -20,7 +20,7 @@ public class registroController {
         return service.RegistrarUsuario(user);
     }
 
-    @GetMapping("")
+    @GetMapping("/users")
     public List<usuarioModel> getall(){
         return service.getAll();
     }

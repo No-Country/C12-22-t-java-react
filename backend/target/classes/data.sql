@@ -1,3 +1,5 @@
+insert into usuario(email, password, nombres, apellidos) values ('correovalido2@gmail.com', '$2a$10$aMqbESjKZtuzrsr0hCK/yeifsJofg5iSQG2IzJqaGe1v7eGbJSYa.', 'Alvaro', 'Gonzales');
+
 insert into Categoria(nombre_categoria) values ('Iphone'), ('Ipad'), ('Mac');
 insert into categoria_producto(nombre_producto, imagen_1,imagen_2, imagen_3, imagen_4, categoria, descripcion, precio, tamano_pantalla, modelo_chip, camara, sistema_operativo, bateria, conectividad, ram)
        values ('Iphone 12', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-finish-unselect-gallery-1-202207_GEO_US?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1662129048006',

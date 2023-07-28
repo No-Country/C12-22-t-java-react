@@ -11,7 +11,8 @@ import java.sql.Date;
 public class usuarioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "user_id")
+    private Long userId;
     @Column(unique = true, length = 100)
     private String email;
     private String password;
@@ -41,5 +42,16 @@ public class usuarioModel {
         this.password = password;
         this.nombres = nombres;
         this.apellidos = apellidos;
+    }
+
+    public void changeValues(String direccion, String telefono, String nombres, String apellidos, Date fechaNacimiento, String pais, String ciudad, String sexo) {
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.fechaNacimiento = fechaNacimiento;
+        this.pais = pais;
+        this.ciudad = ciudad;
+        this.sexo = sexo;
     }
 }

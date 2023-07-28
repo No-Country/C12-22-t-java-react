@@ -1,6 +1,7 @@
 package com.apple.store.clon.service;
 
 import com.apple.store.clon.DAO.usuarioDAO;
+import com.apple.store.clon.DTO.UsuarioPerfilDTO;
 import com.apple.store.clon.DTO.usuarioRegistroDTO;
 import com.apple.store.clon.model.usuarioModel;
 import com.apple.store.clon.response.RegistroResponse;
@@ -12,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class usuarioService {
@@ -39,5 +41,28 @@ public class usuarioService {
 
     public List<usuarioModel> getAll(){
         return dao.findAll();
+    }
+
+    public UsuarioPerfilDTO findByEmail(String email){
+        Optional<usuarioModel> buscar= dao.findOneByEmail(email);
+        if (buscar.isPresent()){
+            usuarioModel user = buscar.get();
+            return new UsuarioPerfilDTO(user.getEmail(), user.getDireccion(), user.getTelefono(), user.getNombres(),
+                    user.getApellidos(), user.getFechaNacimiento(), user.getPais(), user.getCiudad(), user.getSexo());
+        }else {
+            return null;
+        }
+    }
+
+    public UsuarioPerfilDTO save( UsuarioPerfilDTO user, String email){
+        Optional<usuarioModel> buscar= dao.findOneByEmail(email);
+        if (buscar.isPresent()){
+            usuarioModel userFind = buscar.get();
+            userFind.changeValues(user.getDireccion(), user.getTelefono(), user.getNombres(),
+                    user.getApellidos(), user.getFechaNacimiento(), user.getPais(), user.getCiudad(), user.getSexo());
+            dao.save(userFind);
+
+        }
+        return user;
     }
 }
