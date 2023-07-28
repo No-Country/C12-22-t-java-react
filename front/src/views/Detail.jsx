@@ -60,7 +60,7 @@ const Detail = () => {
               <div className="text-left">
                 <div className="pb-4 ">
                   <b>Pantalla:</b>{' '}
-                  {products.tamanoPantalla?.split('-').map(line => (
+                  {products.tamanoPantalla?.split('*').map(line => (
                     <p key={line} className="text-base">
                       {line}
                     </p>
@@ -68,7 +68,7 @@ const Detail = () => {
                 </div>
                 <div className="pb-4">
                   <b>Chip:</b>
-                  {products.modeloChip?.split('-').map(line => (
+                  {products.modeloChip?.split('*').map(line => (
                     <p key={line} className="text-base">
                       {line}
                     </p>
@@ -82,7 +82,7 @@ const Detail = () => {
               <div className="text-left">
                 <div className="pb-4 w-">
                   <b>Batería:</b>
-                  {products.bateria?.split('-').map(line => (
+                  {products.bateria?.split('*').map(line => (
                     <p key={line} className="text-base">
                       {line}
                     </p>
@@ -90,7 +90,7 @@ const Detail = () => {
                 </div>
                 <div className="pb-4">
                   <b>Cámara:</b>
-                  {products.camara?.split('-').map(line => (
+                  {products.camara?.split('*').map(line => (
                     <p key={line} className="text-base">
                       {line}
                     </p>
