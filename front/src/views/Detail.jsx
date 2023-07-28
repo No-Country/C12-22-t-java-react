@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Detail = () => {
   const [products, setProducts] = useState([]);
@@ -27,37 +27,92 @@ const Detail = () => {
   }, []);
 
   return (
-    <div className=" bg-slate-700 text-white text-center w-full mx-auto h-full">
-      <div className=" py-12 flex">
+    <div className=" bg-gray-800 text-white text-center w-full mx-auto h-full">
+      <div className="p-8 md:p-16 flex">
         {products && (
           <section
             key={products.categoriaProductoId}
-            className="w-3/5 bg-slate-600 m-auto rounded-xl  p-6 flex-col  justify-center items-center gap-4"
+            className="w-full bg-white text-gray-800 m-auto rounded-xl p-4 md:p-12  "
           >
-            <h3 className="font-bold text-5xl mb-4">
-              {products.nombreProducto}
-            </h3>
-            <img
-              src={products.imagen2}
-              alt={products.nombreProducto}
-              className="mx-auto"
-            />
-            <div className="flex flex-col gap-4">
-              <p className=" text-lg font-semibold">
-                Capacidad: 128GB / 256GB / 512GB
-              </p>
+            <div className='flex justify-center items-center flex-wrap md:gap-8 text-left'>
+              <div className=" flex justify-center items-left">
+                <img
+                  src={products.imagen1}
+                  alt={products.nombreProducto}
+                  className="w-60"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="font-bold text-xl mb-4">
+                  {products.nombreProducto}
+                </h3>
+                <p className="font-bold text-xl mt-2">${products.precio}</p>
+                <div className="py-4 ">
+                  <Link
+                    className="py-2 border-solid border-2 hover:border-green-500 bg-green-500 hover:bg-white text-white hover:text-green-500
+                      shadow  px-4 rounded-md text-lg
+                      transition ease-in duration-out m-auto text-center"
+                  >
+                    <i className=" fa-solid fa-cart-shopping"></i>
+                  </Link>
+                </div>
+              </div>
+              <div className="text-left">
+                <div className="pb-4 ">
+                  <b>Pantalla:</b>{' '}
+                  {products.tamanoPantalla?.split('-').map(line => (
+                    <p key={line} className="text-base">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+                <div className="pb-4">
+                  <b>Chip:</b>
+                  {products.modeloChip?.split('-').map(line => (
+                    <p key={line} className="text-base">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+                <div className='pb-4'>
+                  <b>Sistema Operativo:</b>
+                  <p>{products.sistemaOperativo}</p>
+                </div>
+              </div>
+              <div className="text-left">
+                <div className="pb-4 w-">
+                  <b>Batería:</b>
+                  {products.bateria?.split('-').map(line => (
+                    <p key={line} className="text-base">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+                <div className="pb-4">
+                  <b>Cámara:</b>
+                  {products.camara?.split('-').map(line => (
+                    <p key={line} className="text-base">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+                <div className="pb-4">
+                  <p>
+                    <b>Conectividad:</b> {products.conectividad}
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <b>Ram:</b> {products.ram}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='py-12'>
               <p className=" text-md">{products.descripcion}</p>
-              <p className=" text-lg ">{products.tamañoPantalla}</p>
-              <p className=" text-lg ">{products.modeloChip}</p>
-              <p></p>
-              <p className="font-bold text-4xl mt-2">${products.precio}</p>
-              <button className=" w-40 mx-auto border rounded-md mt-2 p-2 px-3 bg-slate-700 text-gray-300 hover:text-white">
-                Añadir al carrito <i className=" fa-solid fa-cart-shopping"></i>
-              </button>
             </div>
           </section>
         )}
-        <hr />
       </div>
     </div>
   );
