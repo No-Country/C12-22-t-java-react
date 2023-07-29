@@ -33,6 +33,7 @@ public class CategoriaProductService {
         insert.add(new CategoriaProductSendDTO(model.getNombreProducto(), model.getPrecio(), model.getImagen1(), model.getImagen2(), model.getImagen3(), model.getImagen4(), model.getDescripcion(),
                 model.getTamañoPantalla(), model.getModeloChip(), nuevoProducto.getCategoriaModel(), model.getCamara(), model.getSistemaOperativo(), model.getBateria(),
                 model.getConectividad(), model.getRam(), nuevoProducto.getInventario(), null));
+        dao.save(nuevoProducto);
         response.setData(new CategoriaProductoResponse(insert));
         return new ResponseEntity<CategoriaProductoResponseRest>(response, HttpStatus.OK);
     }

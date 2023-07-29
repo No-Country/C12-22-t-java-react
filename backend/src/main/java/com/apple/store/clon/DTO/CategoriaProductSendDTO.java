@@ -54,30 +54,33 @@ public class CategoriaProductSendDTO {
         this.categoriaProductoId=categoriaProductoId;
         List<String> cap=new ArrayList<>();
 
-        for (int i = 0; i < productos.size(); i++) {
-            cap.add(productos.get(i).getCantidadMemoria());
-        }
-        for (int i = 0; i < productos.size(); i++) {
-            if (i<(productos.size()-1)){
-                for (int j = i+1; j < productos.size(); j++) {
-                    if (productos.get(i).getColor().equals(productos.get(j).getColor())) productos.remove(j);
+        if (productos!=null) {
+            for (int i = 0; i < productos.size(); i++) {
+                cap.add(productos.get(i).getCantidadMemoria());
+            }
+            for (int i = 0; i < productos.size(); i++) {
+                if (i < (productos.size() - 1)) {
+                    for (int j = i + 1; j < productos.size(); j++) {
+                        if (productos.get(i).getColor().equals(productos.get(j).getColor())) productos.remove(j);
+                    }
                 }
             }
-        }
 
-        for (int i = 0; i < cap.size(); i++) {
-            if (i<(cap.size()-1)) {
-                for (int j = i + 1; j < cap.size(); j++) {
-                    if (cap.get(i).equals(cap.get(j))) cap.remove(j);
+
+            for (int i = 0; i < cap.size(); i++) {
+                if (i < (cap.size() - 1)) {
+                    for (int j = i + 1; j < cap.size(); j++) {
+                        if (cap.get(i).equals(cap.get(j))) cap.remove(j);
+                    }
                 }
             }
-        }
 
-        for (int i = 0; i < productos.size(); i++) {
-            colores+= productos.get(i).getColor()+" ";
-        }
-        for (int i = 0; i < cap.size(); i++) {
-            capacidadMemoria+= cap.get(i)+ " ";
+            for (int i = 0; i < productos.size(); i++) {
+                colores += productos.get(i).getColor() + " ";
+            }
+            for (int i = 0; i < cap.size(); i++) {
+                capacidadMemoria += cap.get(i) + " ";
+            }
         }
     }
 }
